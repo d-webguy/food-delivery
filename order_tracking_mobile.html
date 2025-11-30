@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orowiri - Track Your Order</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#E8772E",
+          "background-light": "#FFF9F2",
+          "background-dark": "#101622",
+          "success": "#4CAF50"
+        },
+        fontFamily: {
+          "display": ["Public Sans"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  /* Ensure proper touch targets on mobile */
+  @media (max-width: 640px) {
+    button, a {
+      min-height: 44px;
+    }
+  }
+</style>
+</head>
+<body class="font-display overflow-x-hidden">
+<div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark min-h-screen">
+  <!-- Main Content Area -->
+  <div class="relative flex flex-col flex-1">
+    <!-- Top App Bar -->
+    <div class="flex items-center bg-background-light dark:bg-background-dark px-3 sm:px-4 py-3 sm:py-4 pb-2 justify-between sticky top-0 z-20">
+      <button class="text-gray-800 dark:text-gray-200 flex size-10 sm:size-12 shrink-0 items-center justify-center -ml-2 sm:-ml-3">
+        <span class="material-symbols-outlined text-xl sm:text-2xl">arrow_back</span>
+      </button>
+      <h2 class="text-gray-900 dark:text-white text-base sm:text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center px-2">Track Your Order</h2>
+      <div class="w-10 sm:w-12"></div>
+    </div>
+
+    <!-- Map View -->
+    <div class="flex flex-col w-full">
+      <div class="w-full">
+        <div class="bg-cover bg-center w-full h-[240px] sm:h-[300px] md:h-[360px] lg:h-[420px]" data-alt="Map showing the delivery route from restaurant to customer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzlov7mtUeYuF5syTmYgaNVr01FGCqOHO7V35gwafMjTopaegs1MNPG6-ASFWbBXXTfU7x98dylM9qR07BP5a17iXw2OqjedzTokNum9KGim8SwUmtnjsGwaLLknIsXWXdzErqaYeIgP130sg7kPupjbsLogKNum0QjU0IqjcGgQdkKUas34x6afk8o1iEX5m_vYzr3bYMKk5QE6UXXy4Tnlfi6oZcLbHlXY5Vfg9dGLYWnSTAqNHwqTzFAZ8JUV9FPnQf0hVZ-bZi");'>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="flex w-full flex-col items-stretch bg-white dark:bg-gray-800 rounded-t-2xl shadow-[0_-4px_12px_rgba(0,0,0,0.05)] pb-4 sm:pb-6">
+      <button class="flex h-5 w-full items-center justify-center pt-3">
+        <div class="h-1 w-9 rounded-full bg-gray-200 dark:bg-gray-600"></div>
+      </button>
+      
+      <div class="p-3 sm:p-4 pt-2 pb-4 sm:pb-6">
+        <!-- ETA Card -->
+        <div class="text-center mb-3 sm:mb-4">
+          <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">Estimated Delivery Time</p>
+          <p class="text-primary text-2xl sm:text-3xl font-bold mt-1">15 Mins</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="grid grid-cols-[32px_1fr] sm:grid-cols-[40px_1fr] gap-x-2 sm:gap-x-3">
+          <!-- Step 1: Order Confirmed -->
+          <div class="flex flex-col items-center gap-1 pt-2 sm:pt-3">
+            <div class="text-success flex items-center justify-center size-5 sm:size-6 rounded-full bg-success/20">
+              <span class="material-symbols-outlined text-sm sm:text-base">check</span>
+            </div>
+            <div class="w-[1.5px] bg-primary h-2 grow"></div>
+          </div>
+          <div class="flex flex-1 flex-col py-2 sm:py-3">
+            <p class="text-gray-800 dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">Order Confirmed</p>
+            <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-normal leading-normal">10:45 AM</p>
+          </div>
+
+          <!-- Step 2: Preparing -->
+          <div class="flex flex-col items-center gap-1">
+            <div class="w-[1.5px] bg-primary h-2"></div>
+            <div class="text-primary flex items-center justify-center size-5 sm:size-6 rounded-full bg-primary/20">
+              <span class="material-symbols-outlined text-sm sm:text-base">restaurant_menu</span>
+            </div>
+            <div class="w-[1.5px] bg-primary h-2 grow"></div>
+          </div>
+          <div class="flex flex-1 flex-col py-2 sm:py-3">
+            <p class="text-gray-800 dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">Preparing Your Meal</p>
+            <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-normal leading-normal">10:50 AM</p>
+          </div>
+
+          <!-- Step 3: On The Way -->
+          <div class="flex flex-col items-center gap-1">
+            <div class="w-[1.5px] bg-primary h-2"></div>
+            <div class="text-primary flex items-center justify-center size-5 sm:size-6 rounded-full bg-primary/20">
+              <span class="material-symbols-outlined text-sm sm:text-base">moped</span>
+            </div>
+            <div class="w-[1.5px] bg-gray-300 dark:bg-gray-600 h-2 grow"></div>
+          </div>
+          <div class="flex flex-1 flex-col py-2 sm:py-3">
+            <p class="text-gray-800 dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">On The Way</p>
+            <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-normal leading-normal">11:05 AM</p>
+          </div>
+
+          <!-- Step 4: Delivered -->
+          <div class="flex flex-col items-center gap-1 pb-2 sm:pb-3">
+            <div class="w-[1.5px] bg-gray-300 dark:bg-gray-600 h-2"></div>
+            <div class="text-gray-400 dark:text-gray-500 flex items-center justify-center size-5 sm:size-6 rounded-full bg-gray-100 dark:bg-gray-700">
+              <span class="material-symbols-outlined text-sm sm:text-base">inventory_2</span>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col py-2 sm:py-3">
+            <p class="text-gray-400 dark:text-gray-500 text-sm sm:text-base font-medium leading-normal">Delivered</p>
+          </div>
+        </div>
+
+        <hr class="my-3 sm:my-4 border-gray-200 dark:border-gray-700"/>
+
+        <!-- Rider Info -->
+        <div class="flex items-center gap-3 sm:gap-4 py-2 justify-between">
+          <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0" data-alt="Profile picture of James Anderson, the delivery rider" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRO94TDB8h91gxff9hHYXtw_ELXXtXH9xOqA7dFJWu0jlpQb_7_TK6Ea3KmTWRD9ewa1Dlbu_Ufp5O-VnOg8MK0aDz4Ni89SeTOVPWGEOQKXgC-Plb9dlfm_oi9dxlPsFHZQptbijjMmjsajjetTg3XHwcYV5wNOpJvGChGnlNr9-A9GUMW9eRvRPm_v0liZC8LP-yp5HH0SQ-zqPVL8vLg5OgYdAM-Rfa1Ya7cJuT7K1hIVvv4U0QmMWHMweH_iAfmqJSSJWbVgs_')"></div>
+            <div class="flex flex-col justify-center min-w-0 flex-1">
+              <p class="text-gray-800 dark:text-gray-100 text-sm sm:text-base font-medium leading-normal truncate">James Anderson</p>
+              <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-normal leading-normal">Your Rider</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1 text-yellow-500 flex-shrink-0">
+            <span class="material-symbols-outlined text-base sm:text-lg">star</span>
+            <span class="text-xs sm:text-sm font-medium text-gray-800 dark:text-gray-200">4.8</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6">
+          <button class="flex h-11 sm:h-12 w-full items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm sm:text-base font-medium active:scale-95 transition-transform">
+            <span class="material-symbols-outlined text-xl sm:text-2xl">call</span>
+            <span>Call Rider</span>
+          </button>
+          <button class="flex h-11 sm:h-12 w-full items-center justify-center gap-2 rounded-lg bg-green-500 hover:bg-green-600 text-white text-sm sm:text-base font-medium active:scale-95 transition-transform">
+            <svg class="h-4 w-4 sm:h-5 sm:w-5 fill-current" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>Chat on WhatsApp</span>
+          </button>
+        </div>
+
+        <!-- Help Link -->
+        <div class="text-center mt-4 sm:mt-6 pb-2">
+          <a class="text-primary text-xs sm:text-sm font-medium hover:underline" href="#">Need Help?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

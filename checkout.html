@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - Chop Food</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Public Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+      }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden text-[#101622] dark:text-white">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex h-16 w-full items-center justify-between border-b border-b-slate-200 bg-white/80 px-4 backdrop-blur-sm dark:border-b-slate-800 dark:bg-background-dark/80">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full text-[#101622] dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold">Secure Checkout</h1>
+<div class="size-10 shrink-0"></div>
+</header>
+<main class="flex-grow pb-32">
+<!-- Deliver To Section -->
+<section class="p-4">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Deliver To</h2>
+<div class="flex items-start gap-4 rounded-xl bg-white p-4 dark:bg-slate-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-background-light dark:bg-slate-700">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">location_on</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium leading-normal">Chukwudi O.</p>
+<p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">+234 801 234 5678</p>
+<p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">123 Avenue, Port Harcourt, Rivers State</p>
+</div>
+<button class="shrink-0 text-sm font-medium text-primary">Change</button>
+</div>
+</section>
+<!-- Payment Method Section -->
+<section class="p-4 pt-2">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Payment Method</h2>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-4 rounded-xl border border-primary bg-primary/5 p-4 ring-2 ring-primary/20 dark:border-primary/70 dark:bg-primary/10">
+<div class="flex size-10 items-center justify-center rounded-lg bg-white dark:bg-slate-700">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">credit_card</span>
+</div>
+<div class="flex-1 text-sm font-medium">Credit/Debit Card</div>
+<input checked="" class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-slate-300 bg-transparent text-primary checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-slate-600" name="payment_method" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800/50">
+<div class="flex size-10 items-center justify-center rounded-lg bg-background-light dark:bg-slate-700">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">smartphone</span>
+</div>
+<div class="flex-1 text-sm font-medium">Mobile Money</div>
+<input class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-slate-300 bg-transparent text-primary checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-slate-600" name="payment_method" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800/50">
+<div class="flex size-10 items-center justify-center rounded-lg bg-background-light dark:bg-slate-700">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">payments</span>
+</div>
+<div class="flex-1 text-sm font-medium">Cash on Delivery</div>
+<input class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-slate-300 bg-transparent text-primary checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-slate-600" name="payment_method" type="radio"/>
+</label>
+</div>
+</section>
+<!-- Order Summary Section -->
+<section class="p-4 pt-2">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Your Order</h2>
+<div class="space-y-4 rounded-xl bg-white p-4 dark:bg-slate-800/50">
+<div class="flex items-center gap-4">
+<img class="h-16 w-16 shrink-0 rounded-lg object-cover" data-alt="A slice of pizza with cheese and toppings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3OMvH4V_QTbGLfcfN61pLS6cBln5mfHEgBk_OKU-5LHUN8vC3PgImKzNpDlkSLWITggntMgFrzkYj7YKBl4fUfPM8IYxPyOhoa9tywXJfw-cygDRIBb-hXj1rIPMUWSWvWO0bi5uLngAorYdoJ5zbEA6AniZknbHjNu_LQ8KMjlghjD-mODNyBQx2rE4wOGGzQz0Asz66JLr8DqxAXunlzKhmM2cuPt06fHHx1KAk2txV0JAE2CXSOJTpsEqD55kFY-oj-iLfqiEd"/>
+<div class="flex-1">
+<p class="font-medium">Jollof Rice &amp; Chicken</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1x</p>
+</div>
+<p class="font-semibold">₦3,500</p>
+</div>
+<div class="flex items-center gap-4">
+<img class="h-16 w-16 shrink-0 rounded-lg object-cover" data-alt="A bottle of fresh juice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUig8asVRPn-nANwooHrbEN7Fg4NAlY3C7Go_-ZdYQS2ngQxArwjugyF8uDxkWP0aLROfgW-if8cqZf5BcruNoEMCk5d6uYrvMfQRUjKUeguB7BNAQmFF_qUgtIgXydlElu5Roi3msN_VWLg16Q8iCwkpP-WB0TgGUZSuZuXsL7BhtTxf0nhA180pTNFNSO3QwKD5N3IS_WqNC80hCWO7ShN1zQ3ZNhHbjBqOk0Rukxn69NDakZ3PHfKH0KedhNVcEEHSiCb_DJiZi"/>
+<div class="flex-1">
+<p class="font-medium">Fresh Orange Juice</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1x</p>
+</div>
+<p class="font-semibold">₦1,200</p>
+</div>
+<hr class="border-t border-dashed border-slate-300 dark:border-slate-600"/>
+<div class="space-y-2 text-sm">
+<div class="flex justify-between">
+<span class="text-slate-500 dark:text-slate-400">Subtotal</span>
+<span class="font-medium">₦4,700</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500 dark:text-slate-400">Delivery Fee</span>
+<span class="font-medium">₦500</span>
+</div>
+<div class="flex justify-between text-base font-bold">
+<span>Total</span>
+<span>₦5,200</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Promo Code Section -->
+<section class="p-4 pt-2">
+<div class="flex gap-2">
+<input class="h-12 flex-1 rounded-xl border-slate-200 bg-white px-4 text-sm focus:border-primary focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800/50 dark:focus:border-primary" placeholder="Promo Code" type="text"/>
+<button class="h-12 shrink-0 rounded-xl bg-slate-800 px-6 text-sm font-semibold text-white dark:bg-slate-200 dark:text-slate-900">Apply</button>
+</div>
+</section>
+</main>
+<!-- Bottom Fixed CTA -->
+<footer class="fixed bottom-0 left-0 z-10 w-full border-t border-t-slate-200 bg-white/80 p-4 backdrop-blur-sm dark:border-t-slate-800 dark:bg-background-dark/80">
+<button class="flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-primary text-base font-bold text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl">lock</span>
+<span>Place Order (₦5,200)</span>
+</button>
+</footer>
+</div>
+</body></html>
